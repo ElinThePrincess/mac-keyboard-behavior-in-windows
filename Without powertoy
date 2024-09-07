@@ -49,7 +49,7 @@ $!0::Send("^0")
 #HotIf WinActive("ahk_exe chrome.exe")
 $!t::Send("^t") ; New tab (Mac: Cmd + T)
 $!+t::Send("^+t") ; Reopen closed tab (Mac: Cmd + Shift + T)
-;$!^]::Send("{LCtrl down}{Tab down}{Tab up}{LCtrl up}") ;  Next tab (Mac: Cmd + Option + Right Arrow)
+;$!+]::Send("{LCtrl down}{Tab down}{Tab up}{LCtrl up}") ;  Next tab (Mac: Cmd + Option + Right Arrow)
 ;$!+[::Send("{Ctrl down}{Shift down}{Tab down}{Tab up}{Shift up}{Ctrl up}") ; Previous tab (Mac: Cmd + Option + Left Arrow) Alt shift [
 $!+Right::Send("{LCtrl down}{Tab down}{Tab up}{LCtrl up}") ;  Next tab (Mac: Cmd + Option + Right Arrow)
 $!+Left::Send("{Ctrl down}{Shift down}{Tab down}{Tab up}{Shift up}{Ctrl up}") ; Previous tab (Mac: Cmd + Option + Left Arrow) Alt shift [
