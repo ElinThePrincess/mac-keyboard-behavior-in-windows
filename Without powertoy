@@ -7,29 +7,29 @@ Pause::Suspend  ; Win + P toggles suspend
 #SuspendExempt False
 
 <^Tab:: {
-    Send("{LCtrl down}{Tab}")
+    Send("{LCtrl down}{Tab}") ; Mac: Cmd + Tab
     KeyWait("LAlt")
     Send("{LCtrl up}")
 }
 
 ; Remap Alt + Tab to AltTab without blocking Windows Alt behavior
-~<^Tab::AltTab
+~<^Tab::AltTab ; Mac: Cmd + Tab
 
-$!x::Send("^x") ; Cut
-$!c::Send("^c") ; Copy
-$!v::Send("^v") ; Paste
-$!s::Send("^s") ; Save
-$!a::Send("^a") ; Select All
-$!z::Send("^z") ; Undo
-$!+z::Send("^y") ; Redo
-$!w::Send("^w") ; Close window/tab
-$!f::Send("^f") ; Find
-$!n::Send("^n") ; New
-$!r::Send("^+{F5}") ; Reload/Refresh
-$!m::Send("{LWin down}{Down}{LWin up}") ; Minimize window
-$!`::Send("{Ctrl down}{Shift down}{Tab}{Shift up}{Ctrl up}") ; Switch windows
+$!x::Send("^x") ; Cut (Mac: Cmd + X)
+$!c::Send("^c") ; Copy (Mac: Cmd + C)
+$!v::Send("^v") ; Paste (Mac: Cmd + V)
+$!s::Send("^s") ; Save (Mac: Cmd + S)
+$!a::Send("^a") ; Select All (Mac: Cmd + A)
+$!z::Send("^z") ; Undo (Mac: Cmd + Z)
+$!+z::Send("^y") ; Redo (Mac: Cmd + Shift + Z)
+$!w::Send("^w") ; Close window/tab (Mac: Cmd + W)
+$!f::Send("^f") ; Find (Mac: Cmd + F)
+$!n::Send("^n") ; New (Mac: Cmd + N)
+$!r::Send("^+{F5}") ; Reload/Refresh (Mac: Cmd + R)
+$!m::Send("{LWin down}{Down}{LWin up}") ; Minimize window (Mac: Cmd + M)
+$!`::Send("{Ctrl down}{Shift down}{Tab}{Shift up}{Ctrl up}") ; Switch windows (Mac: Cmd + Shift + Tab)
 
-; Quick Switch Tab shortcuts
+; Quick Switch Tab shortcuts (Mac: Cmd + [Number])
 $!1::Send("^1")
 $!2::Send("^2")
 $!3::Send("^3")
@@ -44,37 +44,37 @@ $!0::Send("^0")
 
 ; Chrome specific
 #HotIf WinActive("ahk_exe chrome.exe")
-$!t::Send("^t") ; New tab
-$!+t::Send("^+t") ; Reopen closed tab
-$!+]::Send("{Ctrl down}{Tab down}{Tab up}{Ctrl up}") ; Next tab
-$!+[::Send("{Ctrl down}{Shift down}{Tab down}{Tab up}{Shift up}{Ctrl up}") ; Previous tab
-$!l::Send("^l") ; Focus address bar
-$!LButton::Send("^RButton") ; Send Ctrl + Left Click
+$!t::Send("^t") ; New tab (Mac: Cmd + T)
+$!+t::Send("^+t") ; Reopen closed tab (Mac: Cmd + Shift + T)
+$!+]::Send("{Ctrl down}{Tab down}{Tab up}{Ctrl up}") ;  Next tab (Mac: Cmd + Option + Right Arrow)
+$!+[::Send("{Ctrl down}{Shift down}{Tab down}{Tab up}{Shift up}{Ctrl up}") ; Previous tab (Mac: Cmd + Option + Left Arrow)
+$!l::Send("^l") ; Focus address bar (Mac: Cmd + L)
+$!LButton::Send("^RButton") ; Send Ctrl + Left Click (Mac: Cmd + Left Click)
 #HotIf
 
 
 ; Navigation and selection shortcuts
-$!Left::Send("{Home}") ; Move to beginning of line
-$!Right::Send("{End}") ; Move to end of line
-$!Up::Send("{LCtrl down}{Home}{LCtrl up}") ; Move to beginning of document
-$!Down::Send("{LCtrl down}{End}{LCtrl up}") ; Move to end of document
+$!Left::Send("{Home}") ; Move to beginning of line (Mac: Cmd + Left Arrow)
+$!Right::Send("{End}") ; Move to end of line (Mac: Cmd + Right Arrow)
+$!Up::Send("{LCtrl down}{Home}{LCtrl up}") ; Move to beginning of document (Mac: Cmd + Up Arrow)
+$!Down::Send("{LCtrl down}{End}{LCtrl up}") ; Move to end of document (Mac: Cmd + Down Arrow)
 
-$#Left::Send("{Ctrl down}{Left}{Ctrl up}") ; Move one word left
-$#Right::Send("{Ctrl down}{Right}{Ctrl up}") ; Move one word right
-$#+Left::Send("{Ctrl down}{Shift down}{Left}{Shift up}{Ctrl up}") ; Select one word left
-$#+Right::Send("{Ctrl down}{Shift down}{Right}{Shift up}{Ctrl up}") ; Select one word right
+$#Left::Send("{Ctrl down}{Left}{Ctrl up}") ; Move one word left (Mac: Option + Left Arrow)
+$#Right::Send("{Ctrl down}{Right}{Ctrl up}") ; Move one word right (Mac: Option + Right Arrow)
+$#+Left::Send("{Ctrl down}{Shift down}{Left}{Shift up}{Ctrl up}") ; Select one word left (Mac: Option + Shift + Left Arrow)
+$#+Right::Send("{Ctrl down}{Shift down}{Right}{Shift up}{Ctrl up}") ; Select one word right (Mac: Option + Shift + Right Arrow)
 
-$!+Left::Send("{Shift down}{Home}{Shift up}") ; Select to beginning of line
-$!+Right::Send("{Shift down}{End}{Shift up}") ; Select to end of line
-$!+Up::Send("{Ctrl down}{Shift down}{Home}{Shift up}{Ctrl up}") ; Select to beginning of document
-$!+Down::Send("{Ctrl down}{Shift down}{End}{Shift up}{Ctrl up}") ; Select to end of document
+$!+Left::Send("{Shift down}{Home}{Shift up}") ; Select to beginning of line (Mac: Cmd + Shift + Left Arrow)
+$!+Right::Send("{Shift down}{End}{Shift up}") ; Select to end of line (Mac: Cmd + Shift + Right Arrow)
+$!+Up::Send("{Ctrl down}{Shift down}{Home}{Shift up}{Ctrl up}") ; Select to beginning of document (Mac: Cmd + Shift + Up Arrow)
+$!+Down::Send("{Ctrl down}{Shift down}{End}{Shift up}{Ctrl up}") ; Select to end of document (Mac: Cmd + Shift + Down Arrow)
 
-!BS::Send("{LShift down}{Home}{LShift up}{Del}") ; Delete word before caret
+!BS::Send("{LShift down}{Home}{LShift up}{Del}") ; Delete word before caret (Mac: Option + Delete)
 
-#HotIf WinActive("ahk_class CabinetWClass") ; File Explorer
-^Backspace::Send("{Delete}")
+#HotIf WinActive("ahk_exe explorer.exe") ; File Explorer
+^Backspace::Send("{Delete}") ; Delete file (Mac: Cmd + Backspace)
 
-$!q::HoldToQuit()  ; Hold Alt + Q for 3 seconds to quit
+$!q::HoldToQuit()  ; Hold Alt + Q for 3 seconds to quit (Mac: Cmd + Q)
 
 ; Function to hold Alt + Q for 3 seconds before quitting
 HoldToQuit() {
@@ -84,6 +84,6 @@ HoldToQuit() {
             return
         Sleep(10)
     }
-    Send("!{f4}")  ; Sends Alt + F4 to close the window
+    Send("!{f4}")  ; Sends Alt + F4 to close the window (Mac: Cmd + Q equivalent)
     return
 }
