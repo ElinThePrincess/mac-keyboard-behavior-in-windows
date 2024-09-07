@@ -3,8 +3,10 @@
 ; https://www.autohotkey.com/docs/v2/Hotkeys.htm
 ; Pause/Resume script execution
 #SuspendExempt
-Pause::Suspend  ; Win + P toggles suspend
+Pause::Suspend  ; Toggles the suspend state of the script when the PAUSE key is pressed
 #SuspendExempt False
+
+$!Pause::Reload  ; Reloads the script when Alt + PAUSE is pressed
 
 <^Tab:: {
     Send("{LCtrl down}{Tab}") ; Mac: Cmd + Tab
@@ -43,11 +45,14 @@ $!0::Send("^0")
 
 
 ; Chrome specific
+; https://support.google.com/chrome/answer/157179?hl=en&co=GENIE.Platform%3DDesktop#zippy=%2Ctab-window-shortcuts
 #HotIf WinActive("ahk_exe chrome.exe")
 $!t::Send("^t") ; New tab (Mac: Cmd + T)
 $!+t::Send("^+t") ; Reopen closed tab (Mac: Cmd + Shift + T)
-$!+]::Send("{Ctrl down}{Tab down}{Tab up}{Ctrl up}") ;  Next tab (Mac: Cmd + Option + Right Arrow)
-$!+[::Send("{Ctrl down}{Shift down}{Tab down}{Tab up}{Shift up}{Ctrl up}") ; Previous tab (Mac: Cmd + Option + Left Arrow)
+;$!^]::Send("{LCtrl down}{Tab down}{Tab up}{LCtrl up}") ;  Next tab (Mac: Cmd + Option + Right Arrow)
+;$!+[::Send("{Ctrl down}{Shift down}{Tab down}{Tab up}{Shift up}{Ctrl up}") ; Previous tab (Mac: Cmd + Option + Left Arrow) Alt shift [
+$!+Right::Send("{LCtrl down}{Tab down}{Tab up}{LCtrl up}") ;  Next tab (Mac: Cmd + Option + Right Arrow)
+$!+Left::Send("{Ctrl down}{Shift down}{Tab down}{Tab up}{Shift up}{Ctrl up}") ; Previous tab (Mac: Cmd + Option + Left Arrow) Alt shift [
 $!l::Send("^l") ; Focus address bar (Mac: Cmd + L)
 $!LButton::Send("^RButton") ; Send Ctrl + Left Click (Mac: Cmd + Left Click)
 #HotIf
