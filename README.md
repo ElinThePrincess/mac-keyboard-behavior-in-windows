@@ -9,36 +9,10 @@ This [AutoHotKey script](mac.ahk) seeks to deliver all the **superior** MacOS ke
 1. A Windows-style keyboard; **this solution is not designed to work with a Mac keyboard**
 2. [AutoHotKey](https://www.autohotkey.com/) installed on your PC
 
-> #### **NOTE**
-> This project provides scripts for both AHK 2.0+ and AHK 1.1, but the 1.1 script is no longer being updated or tested as of **09/09/2023**
-
-3. Swap your Ctrl and Alt keys using [Microsoft Power Toys](https://apps.microsoft.com/store/detail/microsoft-powertoys/XP89DCGQ3K6VLD?hl=en-us&gl=us)
-
-![PowerToys_KeyboardManager.png](assets/PowerToys_KeyboardManager.png)
-
-> ### **NOTE**
-> If your machine is restricted by an admin and you are unable to install Power Toys from the Microsoft store link above, you can try installing the per-user scope version of Power Toys from the [Power Toys GitHub](https://github.com/microsoft/PowerToys/releases)
-> ![PowerToys_User_Download.png](assets/PowerToys_User_Download.png)
-
-4. Optional (but highly recommended): Turn on PowerToys Run and assign it to Ctrl+Space (Since you swapped your Ctrl and Alt keys in the previous step)
-
-![PowerToys_Run](assets/PowerToys_Run.png)
-
-5. Optional: Install [Monosnap](https://monosnap.com/) for screenshots.
-
----
-
 ## Usage
 1. [Prerequisites](#prerequisites) first!
-2. Create a new `mac.ahk` file in the location of your choice. I recommend `%userprofile%/Documents/AutoHotKey/mac.ahk`.
-3. Open your newly created file in a text editor such as Notepad.
-4. Copy the contents of [mac.ahk](mac.ahk) into the file you created and save changes.
-
-> #### **NOTE**
-> [mac1.1.ahk](./mac1.1.ahk) is available if you still want to run AHK 1.1, but this script is no longer being updated or tested as of **09/09/2023**
-
-5. Run the file by double-clicking it in Windows Explorer.
-6. Optionally, learn how to use the Windows Startup folder or Task Scheduler to automatically start your script whenever you log in.
+2. Run the exe file by double-clicking it in Windows Explorer.
+3. Optionally, add a link to the .exe file into the startup folder by holding down Alt while clicking and dragging the .exe file into "C:\Users\name\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup".
 
 ---
 ## Buy me a coffee (optional) ☕
